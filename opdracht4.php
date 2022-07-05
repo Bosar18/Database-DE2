@@ -10,7 +10,7 @@
 <?php
 
 $servername = "localhost";
-$databasename = "database2";
+$databasename = "db_level2_opdr1";
 $username = "user1";
 $password = "g8bal28";
 
