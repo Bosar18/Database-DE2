@@ -1,3 +1,13 @@
+<?php
+        $servername = "localhost";
+        $databasename = "db_level2_opdr1";
+        $username = "user1";
+        $password = "g8bal28";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $databasename);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,26 +19,26 @@
     <body>
         <form method='POST'>
             <?php
-                $id = explode(" ", $_POST["id"])[1];
+                $id = explode(" ", $_POST["id"]);
 
-                echo "<input type='text' name='id' value='$id' readonly>";
+                if($id[0]=="wijzig"){
+                    
+                echo "<input type='text' name='id' value='$id[1]' readonly>";
                 echo "<input type='text' name='artist'>";
                 echo "<input type='text' name='title'>";
                 echo "<input type='submit' name='submit' value='verzend'>";
                 echo "<input type='submit' name='submit2' value='terug'>";
+                }elseif($id[0]=="verwijder"){
+                        $query = $conn -> query("DELETE FROM songs WHERE id = '$id[1]'");
+                        header("location: opdracht2.php");
+                };
+            
             ?>
         </form>
     </body>
 </html>
 <?php
     if (isset($_POST["submit"])) {
-        $servername = "localhost";
-        $databasename = "db_level2_opdr1";
-        $username = "user1";
-        $password = "g8bal28";
-        
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $databasename);
 
         $id = $_POST["id"];
         $artist = $_POST["artist"];

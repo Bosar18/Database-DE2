@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+        
 <?php
 $servername = "localhost";
 $databasename = "db_level2_opdr1";
@@ -30,7 +30,7 @@ if ($result = $conn -> query($query)) {
     while($row = $result->fetch_assoc()){
         echo $row['id'] . ' ';
         echo $row['artist'] .  ', ';
-        echo $row['title'] . '<input type="submit" value="wijzig ' . $row["id"] . '" name="id"></br>';
+        echo $row['title'] . '<input type="submit" value="wijzig ' . $row["id"] . '" name="id"><input type="submit" value="verwijder ' . $row["id"] . '"name="id"><br>';
     }
     
     $result -> free_result();
@@ -40,6 +40,7 @@ echo "</form>";
 if(isset($_POST["submitin"])){
     header("location: opdracht4.php");
 };
+
 ?>
 
     <form  method="POST">
