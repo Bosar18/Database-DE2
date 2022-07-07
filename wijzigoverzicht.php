@@ -44,7 +44,7 @@
         $geboortedatum = $_POST["geboortedatum"];
         
 
-        $query = "UPDATE `songs` SET `id` = '$id', `naam` = '$naam', `geboortedatum` = '$geboortedatum' WHERE `leeftijd`.`id` = $id";
+        $query = "UPDATE `leeftijd` SET `id` = '$id', `naam` = '$naam', `geboortedatum` = '$geboortedatum' WHERE `leeftijd`.`id` = $id";
         $query_run = mysqli_query($conn,$query);
         header("Location: eindopdrachtoverzicht.php");
     }
