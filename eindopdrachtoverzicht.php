@@ -38,7 +38,7 @@ if ($result = $conn -> query($query)) {
 echo "</form>";
 
 if(isset($_POST["submitin"])){
-    header("location: eindopdrachtoverzicht.php");
+    header("location: invoegoverzicht.php");
 };
 
 ?>
