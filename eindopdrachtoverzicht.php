@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully" . '<br>';
 
-echo "<form method='POST' action='opdracht5.php'>";
+echo "<form method='POST' action='wijzigoverzicht.php'>";
 if ($result = $conn -> query($query)) {
     while($row = $result->fetch_assoc()){
         echo $row['id'] . ' ';
