@@ -29,8 +29,8 @@ echo "<form method='POST' action='opdracht5.php'>";
 if ($result = $conn -> query($query)) {
     while($row = $result->fetch_assoc()){
         echo $row['id'] . ' ';
-        echo $row['artist'] .  ', ';
-        echo $row['title'] . '<input type="submit" value="wijzig ' . $row["id"] . '" name="id"><input type="submit" value="verwijder ' . $row["id"] . '"name="id"><br>';
+        echo $row['naam'] .  ', ';
+        echo $row['geboortedatum'] . '<input type="submit" value="wijzig ' . $row["id"] . '" name="id"><input type="submit" value="verwijder ' . $row["id"] . '"name="id"><br>';
     }
     
     $result -> free_result();
