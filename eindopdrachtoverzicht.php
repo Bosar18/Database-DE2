@@ -16,7 +16,7 @@ $password = "g8bal28";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $databasename);
-$query = 'SELECT * FROM `songs`';
+$query = 'SELECT * FROM `leeftijd`';
 
 
 // Check connection
@@ -38,7 +38,7 @@ if ($result = $conn -> query($query)) {
 echo "</form>";
 
 if(isset($_POST["submitin"])){
-    header("location: opdracht4.php");
+    header("location: eindopdrachtoverzicht.php");
 };
 
 ?>
