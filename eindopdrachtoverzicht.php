@@ -30,7 +30,8 @@ if ($result = $conn -> query($query)) {
     while($row = $result->fetch_assoc()){
         echo $row['id'] . ' ';
         echo $row['naam'] .  ', ';
-        echo $row['geboortedatum'] . '<input type="submit" value="wijzig ' . $row["id"] . '" name="id"><input type="submit" value="verwijder ' . $row["id"] . '"name="id"><br>';
+        echo $row['geboortedatum'] . ' ';
+        echo "Leefijd: " . berekenAge($row['geboortedatum']) . '<input type="submit" value="wijzig ' . $row["id"] . '" name="id"><input type="submit" value="verwijder ' . $row["id"] . '"name="id"><br>';
     }
     
     $result -> free_result();
@@ -40,6 +41,14 @@ echo "</form>";
 if(isset($_POST["submitin"])){
     header("location: invoegoverzicht.php");
 };
+
+function berekenAge($datum) {
+    $age = 0;
+    $currentYear = date("Y");
+    $geboortedatum = explode("-", $datum);
+    $age = intval($currentYear) - intval($geboortedatum[0]);
+    return $age;
+}
 
 ?>
 

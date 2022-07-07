@@ -41,6 +41,9 @@ if(isset($_POST['submitinp']) && isset($_POST['naaminp']) && isset($_POST['geboo
 if(isset($_POST['submit3'])){
     header("location: eindopdrachtoverzicht.php");
 };
+
+
+
 ?>  
 
     <form  method="POST">
